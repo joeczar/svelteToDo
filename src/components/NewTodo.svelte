@@ -4,10 +4,10 @@
 
   const dispatch = createEventDispatcher();
 
-  export let autofocus = false
+  export let autofocus: boolean = false
 
   let name = "";
-  let nameEl
+  let nameEl: HTMLElement
 
   // 
 

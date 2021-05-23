@@ -4,10 +4,10 @@
   import { alert } from "../stores";
 
   export let ms = 3000
-  let visible
-  let timeout
+  let visible: boolean
+  let timeout: number
 
-  const onMessageChange = (message, ms) => {
+  const onMessageChange = (message: string, ms: number) => {
     clearTimeout(timeout)
     if(!message) {
       visible = false

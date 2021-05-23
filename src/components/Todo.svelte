@@ -1,14 +1,16 @@
 <script lang="ts">
-  import { createEventDispatcher, tick } from "svelte";
+  import { createEventDispatcher } from "svelte";
   import {selectOnFocus, focusOnInit} from '../actions'
+  import type { TodoType } from '../types/todo.type'
+
   const dispatch = createEventDispatcher();
-  export let todo;
+  export let todo: TodoType;
   let editing = false;
   let name = todo.name;
 
   let editButtonPressed = false
 
-  function update(updateTodo) {
+  function update(updateTodo: Partial<TodoType>) {
     todo = { ...todo, ...updateTodo };
     dispatch("update", todo);
   }
@@ -27,7 +29,7 @@
     editButtonPressed = true
     editing = true;
   }
-  const focusEditButton = (node) => editButtonPressed && node.focus()
+  const focusEditButton = (node: HTMLElement) => editButtonPressed && node.focus()
 
   function onToggle() {
     update({ completed: !todo.completed });
