@@ -1,7 +1,9 @@
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
+# Mozilla Svelte Tutorial 
 
+I followed this [Svelte Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks#svelte_tutorials) to build this app. I believe it is a good documentation of best practices especially concerning accessibility.
 # svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
