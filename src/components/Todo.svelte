@@ -1,10 +1,13 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
-
+  import { createEventDispatcher, tick } from "svelte";
+  import {selectOnFocus, focusOnInit} from '../actions'
   const dispatch = createEventDispatcher();
   export let todo;
   let editing = false;
   let name = todo.name;
+
+  let editButtonPressed = false
+
   function update(updateTodo) {
     todo = { ...todo, ...updateTodo };
     dispatch("update", todo);
@@ -20,12 +23,17 @@
   function onRemove() {
     dispatch("remove", todo);
   }
-  function onEdit() {
+  async function onEdit() {
+    editButtonPressed = true
     editing = true;
   }
+  const focusEditButton = (node) => editButtonPressed && node.focus()
+
   function onToggle() {
     update({ completed: !todo.completed });
   }
+  
+  
 </script>
 
 <div class="stack-small">
@@ -46,6 +54,8 @@
           id="todo-{todo.id}"
           autoComplete="off"
           class="todo-text"
+          use:selectOnFocus
+          use:focusOnInit
         />
       </div>
       <div class="btn-group">
@@ -73,7 +83,7 @@
       <label for="todo-{todo.id}" class="todo-label">{todo.name}</label>
     </div>
     <div class="btn-group">
-      <button type="button" class="btn" on:click={onEdit}>
+      <button type="button" class="btn" on:click={onEdit} use:focusEditButton>
         Edit <span class="visually-hidden">{todo.name}</span>
       </button>
       <button type="button" class="btn btn__danger" on:click={onRemove}>
