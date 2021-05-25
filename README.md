@@ -1,6 +1,19 @@
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
+# Capacitor 
+To initialize Capacitor, first delete capacitor.config.ts. 
+
+Make sure your environment is set up [like this](https://capacitorjs.com/docs/getting-started/environment-setup).
+
+then run `yarn cap init`
+
+To start iOS development run `yarn cap open ios`
+
+To start android development run `yarn cap open android`
+
+
+
 # Mozilla Svelte Tutorial 
 
 I followed this [Svelte Tutorial](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks#svelte_tutorials) to build this app. I believe it is a good documentation of best practices especially concerning accessibility.

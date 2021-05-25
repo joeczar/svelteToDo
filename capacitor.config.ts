@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.example.app',
-  appName: 'svelte-todo-xPlatform',
+  appName: 'svelteTodo',
   webDir: 'public',
   bundledWebRuntime: false
 };
